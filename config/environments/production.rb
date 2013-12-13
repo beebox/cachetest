@@ -78,5 +78,6 @@ Cachetest::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.cache_store = :dalli_store
+  config.cache_store = :dalli_store, 'cache-test.warl9t.cfg.use1.cache.amazonaws.com:11211'
+
 end
