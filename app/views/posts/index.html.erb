@@ -1,0 +1,31 @@
+<div class="col-md-12">
+  <h1>The posts</h1>
+  <br>
+</div>
+
+  <div class="col-md-6">
+    <% @posts.each do |post| %>
+        <div class="well">
+          <h1><%= post.title %></h1>
+          <div><%= post.body %></div>
+          <div><%= post.published %></div>
+          <br>
+          <% post.comments.each do |comment| %>
+            <div>comment.body</div>
+          <% end %>
+
+
+          <p>
+            <span><%= link_to 'Show', post %></span>
+            <span><%= link_to 'Edit', edit_post_path(post) %></span>
+            <span><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          </p>
+        </div>
+    <% end %>
+  </div>
+
+<br>
+
+<div class="col-md-12">
+  <%= link_to 'New Post', new_post_path %>
+</div>
